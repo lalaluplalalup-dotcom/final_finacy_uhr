@@ -45,9 +45,13 @@ function zeigeStunden () {
     stunden_strip.show()
 }
 function zeigeMinuten () {
-    strip.showColor(neopixel.colors(NeoPixelColors.Blue))
-    for (let Index = 0; Index <= minute * leds_an_pro_minute - 1; Index++) {
-        strip.setPixelColor(Index, list[Index])
+    if (minute == 59) {
+        strip.showRainbow(1, 360)
+    } else {
+        strip.showColor(neopixel.colors(NeoPixelColors.Blue))
+        for (let Index = 0; Index <= minute * leds_an_pro_minute - 1; Index++) {
+            strip.setPixelColor(Index, list[Index])
+        }
     }
     strip.show()
 }
