@@ -98,7 +98,7 @@ list2.pop()
 for (let index = 0; index < 11; index++) {
     erstelle_stunden_sequenz()
 }
-loops.everyInterval(1000, function () {
+loops.everyInterval(60000, function () {
     minute += 1
     uhrCheck()
     zeigeMinuten()
