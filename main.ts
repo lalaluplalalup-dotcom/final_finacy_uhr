@@ -3,10 +3,13 @@ function uhrCheck2 () {
     stundenCheck()
 }
 function erstelle5_minuten_sequenz () {
-    for (let index = 0; index < 4; index++) {
+    for (let index = 0; index < 3; index++) {
         for (let Index = 0; Index <= 1; Index++) {
             list.push(neopixel.colors(NeoPixelColors.Purple))
         }
+    }
+    for (let Index = 0; Index <= 1; Index++) {
+        list.push(neopixel.colors(NeoPixelColors.Orange))
     }
     for (let Index = 0; Index <= 1; Index++) {
         list.push(neopixel.colors(NeoPixelColors.Green))
