@@ -23,7 +23,7 @@ function minutenCheck () {
 }
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
     stunde += 1
-    uhrCheck()
+    uhrCheckzumEinstellen()
 })
 function erstelle_stunden_sequenz () {
     list2.push(neopixel.colors(NeoPixelColors.Purple))
@@ -39,7 +39,7 @@ input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     minute += 1
-    uhrCheck()
+    uhrCheckzumEinstellen()
 })
 function zeigeStunden () {
     stunden_strip.showColor(neopixel.colors(NeoPixelColors.Blue))
@@ -47,6 +47,15 @@ function zeigeStunden () {
         stunden_strip.setPixelColor(Index, list2[Index])
     }
     stunden_strip.show()
+}
+function uhrCheckzumEinstellen () {
+    minutenCheckzumEinstellen()
+    stundenCheck()
+}
+function minutenCheckzumEinstellen () {
+    if (minute == minutenlimit) {
+        minute = 0
+    }
 }
 function zeigeMinuten () {
     if (minute == 59) {
